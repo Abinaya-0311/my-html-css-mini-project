@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Sales Table</title>
+    <style>
+        /* Basic CSS for table styling (optional, but makes it look like a real table) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 80%; /* Adjust table width */
+            border-collapse: collapse; /* Collapses borders into a single line */
+            margin: 20px auto; /* Center the table and add margin */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd; /* Light gray border */
+            padding: 12px;
+            text-align: left; /* Align text to the left */
+        }
+        th {
+            background-color: #4CAF50; /* Green background for headers */
+            color: white;
+            text-align: center; /* Center header text */
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light gray for even rows */
+        }
+        tr:hover {
+            background-color: #ddd; /* Hover effect on rows */
+        }
+        tfoot td {
+            font-weight: bold;
+            background-color: #e7e7e7;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product Sales Report</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>P001</td>
+                <td>Laptop Pro</td>
+                <td>15</td>
+                <td>$1200.00</td>
+                <td>$18000.00</td>
+            </tr>
+            <tr>
+                <td>P002</td>
+                <td>Wireless Mouse</td>
+                <td>50</td>
+                <td>$25.50</td>
+                <td>$1275.00</td>
+            </tr>
+            <tr>
+                <td>P003</td>
+                <td>Mechanical Keyboard</td>
+                <td>30</td>
+                <td>$75.00</td>
+                <td>$2250.00</td>
+            </tr>
+            <tr>
+                <td>P004</td>
+                <td>USB-C Hub</td>
+                <td>100</td>
+                <td>$30.00</td>
+                <td>$3000.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: right;">Grand Total:</td>
+                <td>$24525.00</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

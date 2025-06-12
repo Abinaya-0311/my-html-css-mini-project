@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Tooltip Example</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .tooltip-container {
+            display: flex;
+            gap: 40px; /* Space between interactive elements */
+            margin-top: 40px;
+            max-width: 900px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base style for the element that will show a tooltip */
+        .tooltip-trigger {
+            position: relative; /* Important: Establishes positioning context for the tooltip */
+            display: inline-block; /* Allows width/height and makes tooltip position relative to it */
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: help; /* Suggests there's more info */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .tooltip-trigger:hover {
+            background-color: #0056b3;
+        }
+
+        /* CSS Class for the Tooltip */
+        .tooltip-text {
+            visibility: hidden; /* Hide tooltip by default */
+            opacity: 0; /* Make it completely transparent by default */
+            width: 180px; /* Width of the tooltip box */
+            background-color: #555; /* Tooltip background color */
+            color: #fff; /* Tooltip text color */
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute; /* Position relative to the parent (.tooltip-trigger) */
+            z-index: 1; /* Ensure it's above other content */
+            bottom: 125%; /* Position above the element (adjust as needed) */
+            left: 50%;
+            margin-left: -90px; /* Half of width to center it */
+
+            /* Fade-in transition */
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+
+            /* Optional: Tooltip arrow */
+            margin-top: 5px; /* Adjust spacing between element and arrow */
+            font-weight: normal; /* Normal font weight for tooltip text */
+            font-size: 0.9em;
+        }
+
+        /* Optional: Create an arrow for the tooltip */
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%; /* At the bottom of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent; /* Pointing down */
+        }
+
+        /* Show the tooltip when hovering over the trigger element */
+        .tooltip-trigger:hover .tooltip-text {
+            visibility: visible; /* Make visible */
+            opacity: 1; /* Make fully opaque */
+        }
+
+        /* Example for placing tooltip to the right */
+        .tooltip-trigger.right .tooltip-text {
+            bottom: auto;
+            top: 50%;
+            left: 105%; /* Position to the right */
+            margin-left: 0;
+            transform: translateY(-50%); /* Vertically center */
+        }
+        .tooltip-trigger.right .tooltip-text::after {
+            top: 50%;
+            left: -10px; /* Position arrow to the left of tooltip */
+            margin-left: 0;
+            border-color: transparent #555 transparent transparent; /* Pointing left */
+            transform: translateY(-50%);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Tooltips</h1>
+    <p>Hover over the boxes below to see custom tooltips appear.</p>
+
+    <div class="tooltip-container">
+        <!-- Tooltip 1 (above) -->
+        <div class="tooltip-trigger">
+            Hover Me!
+            <span class="tooltip-text">This is a helpful tip that appears on hover.</span>
+        </div>
+
+        <!-- Tooltip 2 (above) -->
+        <div class="tooltip-trigger">
+            Click Me!
+            <span class="tooltip-text">Clicking this doesn't do anything yet, but you got the tooltip!</span>
+        </div>
+
+        <!-- Tooltip 3 (to the right) -->
+        <div class="tooltip-trigger right">
+            More Info
+            <span class="tooltip-text">Additional details about this element can be found here.</span>
+        </div>
+    </div>
+
+</body>
+</html>

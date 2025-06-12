@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clip Property Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            margin: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .image-container {
+            position: relative; /* Container for absolute positioning of the image */
+            width: 300px; /* Should match the original image width */
+            height: 100px; /* Should match the original image height */
+            border: 2px solid #ccc; /* To show the original boundary of the image area */
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensures only the clipped part is visible */
+        }
+
+        /* CSS for the image with clip property */
+        .clipped-image {
+            position: absolute; /* Required for 'clip' property to work */
+            /* Assuming the original image is 300px wide and 100px tall */
+            width: 300px; /* Set original width */
+            height: 100px; /* Set original height */
+            
+           
+            clip: rect(0px, 280px, 90px, 0px); /* cuts 20px from right, 10px from bottom */
+            border: 1px dashed red; /* Optional: to visually see the clipped area's border */
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>GUVI Image with `clip` Property</h1>
+    <p>The original GUVI logo (placeholder) is 300x100px. This example uses `clip: rect(0px, 280px, 90px, 0px);` to show only the portion by cutting 20px from the right and 10px from the bottom.</p>
+
+    <div class="image-container">
+        <img class="clipped-image" src="https://placehold.co/300x100/4CAF50/ffffff?text=GUVI+Logo" alt="GUVI Logo">
+    </div>
+
+    <p style="margin-top: 40px; font-size: 0.9em; color: #666;">
+        (Note: The `clip` property is deprecated. `clip-path` is the modern alternative.)
+    </p>
+
+</body>
+</html>

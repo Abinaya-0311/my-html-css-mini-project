@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with Default Values</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        input[type="url"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="color"], /* Color input won't show value directly in field */
+        textarea,
+        select {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Includes padding in width */
+        }
+        /* Specific styling for range input value display */
+        .range-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .range-container input[type="range"] {
+            width: calc(100% - 50px); /* Adjust for text */
+            margin-bottom: 0;
+        }
+        .range-container span {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-top: 1px dashed #eee;
+            border-bottom: 1px dashed #eee;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline-block; /* Keep labels on same line as input */
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Form with Default Values Example</h1>
+
+    <form action="#" method="post">
+
+        <label for="fullName">Full Name (Text):</label>
+        <input type="text" id="fullName" name="fullName" value="Janani B" placeholder="Enter your full name"><br>
+
+        <label for="userEmail">Email (Email):</label>
+        <input type="email" id="userEmail" name="userEmail" value="janani.b@example.com" placeholder="email@example.com"><br>
+
+        <label for="userPassword">Password (Password - default not recommended for real forms):</label>
+        <input type="password" id="userPassword" name="userPassword" value="mySecret123" placeholder="Enter password"><br>
+
+        <label for="quantity">Quantity (Number - max 100):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" value="50"><br>
+
+        <label for="birthDate">Date of Birth (Date):</label>
+        <input type="date" id="birthDate" name="birthDate" value="2000-01-01"><br>
+
+        <label for="homepage">Homepage (URL):</label>
+        <input type="url" id="homepage" name="homepage" value="https://www.example.com"><br>
+
+        <label for="phoneNumber">Phone Number (Tel):</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" value="9876543210" placeholder="e.g., 9876543210"><br>
+
+        <label for="searchQuery">Search (Search):</label>
+        <input type="search" id="searchQuery" name="searchQuery" value="default search term" placeholder="Search..."><br>
+
+        <label for="favColor">Favorite Color (Color):</label>
+        <input type="color" id="favColor" name="favColor" value="#ff0000"><br> <div class="range-container">
+            <label for="volume">Volume (Range - 0-100):</label>
+            <input type="range" id="volume" name="volume" min="0" max="100" value="75">
+            <span id="volumeValue">75</span>
+            <script>
+                // JavaScript to update range value display (for demonstration)
+                const volumeInput = document.getElementById('volume');
+                const volumeValueSpan = document.getElementById('volumeValue');
+                volumeInput.addEventListener('input', () => {
+                    volumeValueSpan.textContent = volumeInput.value;
+                });
+            </script>
+        </div>
+
+
+        <div class="checkbox-group">
+            <p><strong>Hobbies (Checkbox - select all that apply):</strong></p>
+            <input type="checkbox" id="hobbyReading" name="hobbies" value="reading">
+            <label for="hobbyReading">Reading</label>
+            <input type="checkbox" id="hobbyGaming" name="hobbies" value="gaming" checked>
+            <label for="hobbyGaming">Gaming</label>
+            <input type="checkbox" id="hobbySports" name="hobbies" value="sports">
+            <label for="hobbySports">Sports</label>
+        </div>
+
+        <div class="radio-group">
+            <p><strong>Preferred Contact Method (Radio Button - select one):</strong></p>
+            <input type="radio" id="contactEmail" name="contactMethod" value="email">
+            <label for="contactEmail">Email</label>
+            <input type="radio" id="contactPhone" name="contactMethod" value="phone" checked>
+            <label for="contactPhone">Phone</label>
+            <input type="radio" id="contactSMS" name="contactMethod" value="sms">
+            <label for="contactSMS">SMS</label>
+        </div>
+
+        <label for="comments">Comments (Textarea):</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here...">This is a default comment about the product.</textarea><br>
+
+        <label for="country">Country (Select/Dropdown):</label>
+        <select id="country" name="country">
+            <option value="">-- Please select --</option>
+            <option value="usa">United States</option>
+            <option value="can">Canada</option>
+            <option value="gbr">United Kingdom</option>
+            <option value="ind" selected>India</option> <option value="aus">Australia</option>
+        </select><br>
+
+        <input type="hidden" id="userId" name="userId" value="user12345">
+
+        <br>
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset Form">
+
+    </form>
+
+</body>
+</html>

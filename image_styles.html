@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Styles with CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows images to wrap to the next line */
+            gap: 30px; /* Space between images */
+            justify-content: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CSS Rule for ALL image tags */
+        img {
+            /* 1. Rounded Rectangle */
+            border-radius: 20px; /* Adjust value for more or less rounding */
+
+            /* 2. Dashed Border */
+            border: 3px dashed #777; /* 3px width, dashed style, gray color */
+
+            /* 3. Grayscale for all image tags */
+            filter: grayscale(100%); /* 100% makes it completely grayscale */
+
+            /* Optional: Set a fixed size for demonstration */
+            width: 250px;
+            height: 200px;
+            object-fit: cover; /* Ensures images cover the area without distortion */
+
+            /* Optional: Add a smooth transition for hover effects */
+            transition: all 0.3s ease;
+        }
+
+        /* Optional: Add a hover effect to remove grayscale */
+        img:hover {
+            filter: grayscale(0%); /* Remove grayscale on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            border-color: #4CAF50; /* Change border color on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Styled Images</h1>
+
+    <div class="image-container">
+        <!-- Image 1 -->
+        <img src="https://placehold.co/250x200/cccccc/ffffff?text=Image+1" alt="Placeholder Image 1">
+
+        <!-- Image 2 -->
+        <img src="https://placehold.co/250x200/999999/ffffff?text=Image+2" alt="Placeholder Image 2">
+
+        <!-- Image 3 -->
+        <img src="https://placehold.co/250x200/666666/ffffff?text=Image+3" alt="Placeholder Image 3">
+    </div>
+
+    <p style="margin-top: 30px; color: #555;">
+        All images on this page have a rounded dashed border and are in grayscale. Hover over them!
+    </p>
+
+</body>
+</html>

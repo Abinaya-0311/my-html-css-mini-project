@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Box Model Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px; /* Space between the boxes */
+            justify-content: center;
+            max-width: 1000px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CSS Class for Box Model Requirements */
+        .box-model-example {
+            /* Ensures padding and border are included in the element's total width/height */
+            box-sizing: border-box;
+
+            /* Content Area Dimensions (explicitly set for demonstration) */
+            width: 250px;
+            height: 150px;
+            background-color: #007bff; /* Blue background for content */
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            line-height: 1.4;
+
+            /* Padding: Space between content and border */
+            padding: 25px; /* 25px padding on all four sides */
+
+            /* Border: Line surrounding padding */
+            border: 5px solid #28a745; /* 5px solid green border */
+
+            /* Margin: Space outside the border, separating this box from others */
+            margin: 20px; /* 20px margin on all four sides */
+
+            border-radius: 10px; /* Rounded corners for the box */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for visual depth */
+        }
+
+        .box-model-example p {
+            margin: 0; /* Remove default paragraph margin inside the box */
+        }
+
+        /* Visual explanation for each part of the box model */
+        .explanation {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .explanation strong {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Box Model Demonstration</h1>
+
+    <div class="container">
+        <!-- Div tags with the .box-model-example class -->
+        <div class="box-model-example">
+            <p>Box 1: Content + Padding + Border + Margin</p>
+        </div>
+        <div class="box-model-example">
+            <p>Box 2: Same Box Model Properties</p>
+        </div>
+        <div class="box-model-example">
+            <p>Box 3: The visual size includes padding and border.</p>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h2>Understanding the Box Model:</h2>
+        <p>Every HTML element is a box, and the Box Model describes how its dimensions are calculated based on these properties:</p>
+        <ul>
+            <li><strong>Content:</strong> The actual text, images, or other media within the box. Its dimensions are set by `width` and `height`.</li>
+            <li><strong>Padding:</strong> The space between the content and the border. It's inside the box, so its background color is the same as the content's background. Set by `padding`.</li>
+            <li><strong>Border:</strong> The line that goes around the padding and content. Set by `border`.</li>
+            <li><strong>Margin:</strong> The space outside the border. It pushes other elements away from the box and is transparent. Set by `margin`.</li>
+        </ul>
+        <p>We've used <code>box-sizing: border-box;</code>, which means the <code>width</code> and <code>height</code> properties include padding and border, making layout calculations much easier.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Span Hover Effects</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00796b;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* CSS Class for Span Hover Effect */
+        .hover-effect-span {
+            font-size: 1em; /* Base font size */
+            color: #4CAF50; /* Base text color */
+            font-family: 'Arial', sans-serif; /* Base font family */
+            padding: 5px 8px; /* Add a little padding to make it clear */
+            border-radius: 5px;
+            display: inline-block; /* Allows padding/margin and transition */
+            transition: font-size 0.3s ease, color 0.3s ease, font-family 0.3s ease, background-color 0.3s ease; /* Smooth transition for all changes */
+            cursor: pointer; /* Indicates it's interactive */
+        }
+
+        /* Styles applied when mouse hovers over the span */
+        .hover-effect-span:hover {
+            font-size: 1.3em; /* Increase font size */
+            color: #0056b3; /* Change text color to blue */
+            font-family: 'Georgia', serif; /* Change font family to Georgia */
+            background-color: #e0e0e0; /* Subtle background change on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Span Hover Effects</h1>
+
+    <p>
+        Hover your mouse over the highlighted words below to see the font size, color, and font family change dynamically.
+        <br><br>
+        This is a <span class="hover-effect-span">demonstration</span> of CSS hover effects. When you move your
+        <span class="hover-effect-span">mouse cursor</span> over these
+        <span class="hover-effect-span">specific words</span>, they will
+        <span class="hover-effect-span">visually transform</span>, illustrating how you can
+        <span class="hover-effect-span">enhance user experience</span> with simple CSS.
+        It makes web pages more <span class="hover-effect-span">interactive</span> and engaging.
+    </p>
+
+</body>
+</html>

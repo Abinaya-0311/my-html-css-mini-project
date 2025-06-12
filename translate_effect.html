@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translate Element</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Make body take full viewport height */
+            margin: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        h1 {
+            color: #00695c;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* CSS Class for 2D Translate Effect */
+        .movable-box {
+            width: 200px;
+            height: 150px;
+            background-color: #007bff; /* Blue background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease-in-out; /* Smooth transition for the transform */
+            cursor: grab; /* Indicates it can be moved */
+        }
+
+        /* Style applied when mouse hovers over the box */
+        .movable-box:hover {
+            transform: translate(20px, -15px); /* Move 20px right, 15px up */
+            background-color: #0056b3; /* Slightly darker blue on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>2D Translate Effect</h1>
+    <p>Move your mouse over the box to see it move.</p>
+
+    <div class="movable-box">
+        <p>Move Me!</p>
+    </div>
+
+</body>
+</html>

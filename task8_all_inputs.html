@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All HTML Input Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            margin-bottom: 30px; /* Add some space at the bottom */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        fieldset {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        legend {
+            font-weight: bold;
+            color: #4CAF50;
+            padding: 0 10px;
+            margin-left: -10px;
+            font-size: 1.2em;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"],
+        input[type="datetime-local"],
+        input[type="month"],
+        input[type="week"],
+        input[type="url"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="color"],
+        textarea,
+        select {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        input[type="range"] {
+            width: calc(100% - 22px);
+            margin-top: 5px;
+        }
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: normal;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="reset"] {
+            background-color: #dc3545;
+        }
+        input[type="reset"]:hover {
+            background-color: #c82333;
+        }
+        input[type="button"] {
+            background-color: #6c757d;
+        }
+        input[type="button"]:hover {
+            background-color: #5a6268;
+        }
+        .range-display {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .file-upload-section {
+            margin-top: 15px;
+            border-top: 1px dashed #e0e0e0;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <h1>Comprehensive Form: All Input Types</h1>
+
+        <fieldset>
+            <legend>Basic Text & Numeric Inputs</legend>
+            <div class="form-group">
+                <label for="textInput">Text Input:</label>
+                <input type="text" id="textInput" name="textInput" placeholder="Enter simple text">
+            </div>
+
+            <div class="form-group">
+                <label for="passwordInput">Password:</label>
+                <input type="password" id="passwordInput" name="passwordInput" placeholder="Enter your password">
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput">Email Address:</label>
+                <input type="email" id="emailInput" name="emailInput" placeholder="example@domain.com">
+            </div>
+
+            <div class="form-group">
+                <label for="numberInput">Number (1-100):</label>
+                <input type="number" id="numberInput" name="numberInput" min="1" max="100" value="50">
+            </div>
+
+            <div class="form-group">
+                <label for="telInput">Phone Number:</label>
+                <input type="tel" id="telInput" name="telInput" pattern="[0-9]{10}" placeholder="e.g., 1234567890">
+            </div>
+
+            <div class="form-group">
+                <label for="urlInput">Website URL:</label>
+                <input type="url" id="urlInput" name="urlInput" placeholder="https://www.example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="searchInput">Search Query:</label>
+                <input type="search" id="searchInput" name="searchInput" placeholder="Search for something...">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Date & Time Selectors</legend>
+            <div class="form-group">
+                <label for="dateInput">Date:</label>
+                <input type="date" id="dateInput" name="dateInput">
+            </div>
+
+            <div class="form-group">
+                <label for="timeInput">Time:</label>
+                <input type="time" id="timeInput" name="timeInput">
+            </div>
+
+            <div class="form-group">
+                <label for="datetimeLocalInput">Date and Time (Local):</label>
+                <input type="datetime-local" id="datetimeLocalInput" name="datetimeLocalInput">
+            </div>
+
+            <div class="form-group">
+                <label for="monthInput">Month:</label>
+                <input type="month" id="monthInput" name="monthInput">
+            </div>
+
+            <div class="form-group">
+                <label for="weekInput">Week:</label>
+                <input type="week" id="weekInput" name="weekInput">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Choice & Range Inputs</legend>
+            <div class="form-group">
+                <label for="favColor">Favorite Color:</label>
+                <input type="color" id="favColor" name="favColor" value="#4287f5">
+            </div>
+
+            <div class="form-group">
+                <label for="satisfactionRange">Satisfaction (0-100):</label>
+                <input type="range" id="satisfactionRange" name="satisfactionRange" min="0" max="100" value="70">
+                <span class="range-display" id="satisfactionValue">70</span>
+                <script>
+                    const rangeInput = document.getElementById('satisfactionRange');
+                    const rangeValue = document.getElementById('satisfactionValue');
+                    rangeInput.addEventListener('input', () => {
+                        rangeValue.textContent = rangeInput.value;
+                    });
+                </script>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Skills:</label>
+                <input type="checkbox" id="skillHtml" name="skills" value="html">
+                <label for="skillHtml">HTML</label>
+                <input type="checkbox" id="skillCss" name="skills" value="css" checked>
+                <label for="skillCss">CSS</label>
+                <input type="checkbox" id="skillJs" name="skills" value="javascript">
+                <label for="skillJs">JavaScript</label>
+            </div>
+
+            <div class="form-group radio-group">
+                <label>Gender:</label>
+                <input type="radio" id="genderMale" name="gender" value="male">
+                <label for="genderMale">Male</label>
+                <input type="radio" id="genderFemale" name="gender" value="female" checked>
+                <label for="genderFemale">Female</label>
+                <input type="radio" id="genderOther" name="gender" value="other">
+                <label for="genderOther">Other</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Advanced & Other Inputs</legend>
+            <div class="form-group">
+                <label for="message">Your Message (Textarea):</label>
+                <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="countrySelect">Country (Dropdown):</label>
+                <select id="countrySelect" name="countrySelect">
+                    <option value="">-- Please Select --</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="in" selected>India</option>
+                    <option value="au">Australia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="citySuggestion">City (Datalist for suggestions):</label>
+                <input type="text" id="citySuggestion" name="citySuggestion" list="cities" placeholder="Start typing city name">
+                <datalist id="cities">
+                    <option value="New York">
+                    <option value="London">
+                    <option value="Paris">
+                    <option value="Tokyo">
+                    <option value="Mumbai">
+                    <option value="Bengaluru">
+                    <option value="Chennai">
+                </datalist>
+            </div>
+
+            <div class="form-group file-upload-section">
+                <label for="uploadFile">Upload File:</label>
+                <input type="file" id="uploadFile" name="uploadFile" accept=".jpg,.png,.pdf">
+            </div>
+
+            <input type="hidden" id="hiddenField" name="hiddenField" value="secret_data_123">
+        </fieldset>
+
+        <div class="button-group">
+            <input type="submit" value="Submit Form">
+            <input type="reset" value="Reset Form">
+            <input type="button" value="Custom Button" onclick="alert('You clicked the custom button!')">
+        </div>
+    </form>
+
+</body>
+</html>

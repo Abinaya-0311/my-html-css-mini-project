@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Different Cursor Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .cursor-grid {
+            display: grid; /* Use CSS Grid for layout */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+            gap: 20px;
+            width: 80%;
+            max-width: 1000px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cursor-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out; /* Smooth transition on hover */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px; /* Ensure a consistent height */
+        }
+
+        .cursor-box:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        /* Different cursor styles */
+        .cursor-auto { background-color: #007bff; cursor: auto; }
+        .cursor-default { background-color: #28a745; cursor: default; }
+        .cursor-none { background-color: #6c757d; cursor: none; }
+        .cursor-pointer { background-color: #ffc107; cursor: pointer; }
+        .cursor-wait { background-color: #dc3545; cursor: wait; }
+        .cursor-text { background-color: #17a2b8; cursor: text; }
+        .cursor-move { background-color: #6610f2; cursor: move; }
+        .cursor-help { background-color: #fd7e14; cursor: help; }
+        .cursor-not-allowed { background-color: #e83e8c; cursor: not-allowed; }
+        .cursor-grab { background-color: #20c997; cursor: grab; }
+        .cursor-grabbing { background-color: #6f42c1; cursor: grabbing; }
+        .cursor-all-scroll { background-color: #adb5bd; cursor: all-scroll; }
+        .cursor-col-resize { background-color: #343a40; cursor: col-resize; }
+        .cursor-row-resize { background-color: #007bff; cursor: row-resize; }
+        .cursor-n-resize { background-color: #28a745; cursor: n-resize; }
+        .cursor-ne-resize { background-color: #ffc107; cursor: ne-resize; }
+        .cursor-crosshair { background-color: #17a2b8; cursor: crosshair; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Different Types of Cursors</h1>
+    <p>Move your mouse over each box to see the cursor change.</p>
+
+    <div class="cursor-grid">
+        <div class="cursor-box cursor-auto">Auto</div>
+        <div class="cursor-box cursor-default">Default</div>
+        <div class="cursor-box cursor-none">None</div>
+        <div class="cursor-box cursor-pointer">Pointer</div>
+        <div class="cursor-box cursor-wait">Wait</div>
+        <div class="cursor-box cursor-text">Text</div>
+        <div class="cursor-box cursor-move">Move</div>
+        <div class="cursor-box cursor-help">Help</div>
+        <div class="cursor-box cursor-not-allowed">Not Allowed</div>
+        <div class="cursor-box cursor-grab">Grab</div>
+        <div class="cursor-box cursor-grabbing">Grabbing</div>
+        <div class="cursor-box cursor-all-scroll">All-Scroll</div>
+        <div class="cursor-box cursor-col-resize">Col-Resize</div>
+        <div class="cursor-box cursor-row-resize">Row-Resize</div>
+        <div class="cursor-box cursor-n-resize">N-Resize</div>
+        <div class="cursor-box cursor-ne-resize">NE-Resize</div>
+        <div class="cursor-box cursor-crosshair">Crosshair</div>
+    </div>
+
+</body>
+</html>
